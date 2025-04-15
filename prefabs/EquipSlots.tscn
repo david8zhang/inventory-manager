@@ -1,0 +1,61 @@
+[gd_scene load_steps=2 format=3 uid="uid://y3tl4vepndxj"]
+
+[ext_resource type="StyleBox" uid="uid://df8c4yktywed3" path="res://styles/InventoryBox.tres" id="1_cvsl6"]
+
+[node name="EquipSlots" type="VBoxContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -55.0
+offset_right = 60.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="Row1" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="Helmet" type="Panel" parent="Row1"]
+custom_minimum_size = Vector2(90, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("1_cvsl6")
+
+[node name="Row2" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Shield" type="Panel" parent="Row2"]
+custom_minimum_size = Vector2(90, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("1_cvsl6")
+
+[node name="Chest" type="Panel" parent="Row2"]
+custom_minimum_size = Vector2(90, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("1_cvsl6")
+
+[node name="Sword" type="Panel" parent="Row2"]
+custom_minimum_size = Vector2(90, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("1_cvsl6")
+
+[node name="Row3" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="Legs" type="Panel" parent="Row3"]
+custom_minimum_size = Vector2(90, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = ExtResource("1_cvsl6")

@@ -1,5 +1,2 @@
-class_name Game
+class_name Main
 extends Node2D
-
-func _ready():
-	pass

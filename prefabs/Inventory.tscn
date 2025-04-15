@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ge0ou861sgl"]
+
+[ext_resource type="Script" path="res://scripts/Inventory.gd" id="1_5gvbp"]
+[ext_resource type="PackedScene" uid="uid://borkhi2iavice" path="res://prefabs/InventoryBox.tscn" id="2_lyn0t"]
+
+[node name="Inventory" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+alignment = 1
+script = ExtResource("1_5gvbp")
+inventory_box_scene = ExtResource("2_lyn0t")

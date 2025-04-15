@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://borkhi2iavice"]
+
+[ext_resource type="StyleBox" uid="uid://df8c4yktywed3" path="res://styles/InventoryBox.tres" id="1_mxnuo"]
+[ext_resource type="Script" path="res://scripts/InventoryBox.gd" id="1_ts7k1"]
+
+[node name="InventoryBox" type="Panel"]
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_mxnuo")
+script = ExtResource("1_ts7k1")

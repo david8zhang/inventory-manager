@@ -1,3 +1,51 @@
-[gd_scene format=3 uid="uid://bgus7v0a2pw2g"]
+[gd_scene load_steps=4 format=3 uid="uid://gli6uudlxxrd"]
+
+[ext_resource type="Script" path="res://scripts/Main.gd" id="1_n6eh2"]
+[ext_resource type="PackedScene" uid="uid://y3tl4vepndxj" path="res://prefabs/EquipSlots.tscn" id="2_dg7n6"]
+[ext_resource type="PackedScene" uid="uid://ge0ou861sgl" path="res://prefabs/Inventory.tscn" id="2_gnini"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_n6eh2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -466.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HPBar" type="ProgressBar" parent="CanvasLayer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="EXPBar" type="ProgressBar" parent="CanvasLayer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+
+[node name="EquipSlots" parent="CanvasLayer/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_dg7n6")]
+layout_mode = 2
+alignment = 1
+
+[node name="Inventory" parent="CanvasLayer/HBoxContainer" instance=ExtResource("2_gnini")]
+layout_mode = 2
