@@ -11,7 +11,6 @@ var num_cols = 4
 var padding = 10
 var inventory_box_size = 50
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	var curr_x = 0
 	var curr_y = 0

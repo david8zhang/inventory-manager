@@ -1,13 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://gli6uudlxxrd"]
+[gd_scene load_steps=8 format=3 uid="uid://gli6uudlxxrd"]
 
-[ext_resource type="Script" path="res://scripts/Main.gd" id="1_n6eh2"]
+[ext_resource type="Script" path="res://scripts/Game.gd" id="1_hesw4"]
 [ext_resource type="PackedScene" uid="uid://y3tl4vepndxj" path="res://prefabs/EquipSlots.tscn" id="2_dg7n6"]
 [ext_resource type="PackedScene" uid="uid://ge0ou861sgl" path="res://prefabs/Inventory.tscn" id="2_gnini"]
+[ext_resource type="PackedScene" uid="uid://cv20wts0rfcdq" path="res://prefabs/Hero.tscn" id="2_r81kp"]
+[ext_resource type="PackedScene" uid="uid://big35rklpq4p1" path="res://prefabs/Mob.tscn" id="2_u55s3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4ois"]
+bg_color = Color(0.588235, 0.211765, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdnt3"]
+bg_color = Color(0.733333, 0.580392, 0, 1)
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_n6eh2")
+script = ExtResource("1_hesw4")
+
+[node name="Mob" parent="." instance=ExtResource("2_u55s3")]
+position = Vector2(900, 225)
+
+[node name="Hero" parent="." node_paths=PackedStringArray("hp_bar", "exp_bar") instance=ExtResource("2_r81kp")]
+position = Vector2(300, 225)
+hp_bar = NodePath("../CanvasLayer/HBoxContainer/VBoxContainer/HPBar")
+exp_bar = NodePath("../CanvasLayer/HBoxContainer/VBoxContainer/EXPBar")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Spawn Sword"
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_top = 38.0
+offset_right = 114.0
+offset_bottom = 69.0
+text = "Spawn Potion"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 12
@@ -23,24 +51,34 @@ size_flags_horizontal = 3
 layout_mode = 2
 
 [node name="HPBar" type="ProgressBar" parent="CanvasLayer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_l4ois")
+step = 1.0
+value = 100.0
+show_percentage = false
 
 [node name="EXPBar" type="ProgressBar" parent="CanvasLayer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_sdnt3")
+step = 1.0
+value = 100.0
+show_percentage = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 
 [node name="Panel" type="Panel" parent="CanvasLayer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(300, 200)
+custom_minimum_size = Vector2(250, 200)
 layout_mode = 2
 
 [node name="Panel2" type="Panel" parent="CanvasLayer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(300, 200)
+custom_minimum_size = Vector2(250, 200)
 layout_mode = 2
 
 [node name="EquipSlots" parent="CanvasLayer/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("2_dg7n6")]

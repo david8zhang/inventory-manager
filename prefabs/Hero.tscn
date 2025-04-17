@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv20wts0rfcdq"]
+
+[ext_resource type="Script" path="res://scripts/Hero.gd" id="1_8qrbm"]
+[ext_resource type="Texture2D" uid="uid://cx65n3kixkc0n" path="res://assets/hero.png" id="1_b3rx7"]
+
+[node name="Hero" type="Node2D"]
+script = ExtResource("1_8qrbm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("1_b3rx7")
