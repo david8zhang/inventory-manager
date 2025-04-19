@@ -87,3 +87,6 @@ alignment = 1
 
 [node name="Inventory" parent="CanvasLayer/HBoxContainer" instance=ExtResource("2_gnini")]
 layout_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
