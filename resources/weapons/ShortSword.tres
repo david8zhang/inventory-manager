@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponStats" load_steps=3 format=3 uid="uid://bba7y3ievtlyp"]
+
+[ext_resource type="Script" path="res://scripts/WeaponStats.gd" id="1_1jc7g"]
+[ext_resource type="Texture2D" uid="uid://bgc4dpx7wid7s" path="res://assets/weapons/short_sword.png" id="2_su3py"]
+
+[resource]
+script = ExtResource("1_1jc7g")
+damage = 5
+durability = 10
+texture = ExtResource("2_su3py")
+inventory_width = 1
+inventory_height = 2
+item_type = 0

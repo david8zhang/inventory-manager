@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://gli6uudlxxrd"]
+[gd_scene load_steps=9 format=3 uid="uid://gli6uudlxxrd"]
 
 [ext_resource type="Script" path="res://scripts/Game.gd" id="1_hesw4"]
 [ext_resource type="PackedScene" uid="uid://y3tl4vepndxj" path="res://prefabs/EquipSlots.tscn" id="2_dg7n6"]
 [ext_resource type="PackedScene" uid="uid://ge0ou861sgl" path="res://prefabs/Inventory.tscn" id="2_gnini"]
 [ext_resource type="PackedScene" uid="uid://cv20wts0rfcdq" path="res://prefabs/Hero.tscn" id="2_r81kp"]
 [ext_resource type="PackedScene" uid="uid://big35rklpq4p1" path="res://prefabs/Mob.tscn" id="2_u55s3"]
+[ext_resource type="PackedScene" uid="uid://cce072eipikj3" path="res://prefabs/Item.tscn" id="6_4c3bv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4ois"]
 bg_color = Color(0.588235, 0.211765, 0, 1)
@@ -14,6 +15,7 @@ bg_color = Color(0.733333, 0.580392, 0, 1)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_hesw4")
+item_scene = ExtResource("6_4c3bv")
 
 [node name="Mob" parent="." instance=ExtResource("2_u55s3")]
 position = Vector2(900, 225)
@@ -26,16 +28,16 @@ exp_bar = NodePath("../CanvasLayer/HBoxContainer/VBoxContainer/EXPBar")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
 
-[node name="Button" type="Button" parent="CanvasLayer"]
+[node name="SpawnPotion" type="Button" parent="CanvasLayer"]
 offset_right = 8.0
 offset_bottom = 8.0
-text = "Spawn Sword"
+text = "Spawn Potion"
 
-[node name="Button2" type="Button" parent="CanvasLayer"]
+[node name="SpawnWeapon" type="Button" parent="CanvasLayer"]
 offset_top = 38.0
 offset_right = 114.0
 offset_bottom = 69.0
-text = "Spawn Potion"
+text = "Spawn Sword"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 12
